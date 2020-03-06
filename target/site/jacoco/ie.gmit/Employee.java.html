@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">smcintyreExam</a> &gt; <a href="index.source.html" class="el_package">ie.gmit</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">/*
+
+Stephen McIntyre
+g00325469@gmit.ie
+
+ */
+
+package ie.gmit;
+
+public class Employee {
+
+    private String title;
+    private String name;
+    private String PPS;
+    private String number;
+
+    public String getTitle() {
+<span class="fc" id="L18">        return title;</span>
+    }
+
+    public String getName() {
+<span class="nc" id="L22">        return name;</span>
+    }
+
+    public String getPPS() {
+<span class="nc" id="L26">        return PPS;</span>
+    }
+
+    public String getNumber() {
+<span class="nc" id="L30">        return number;</span>
+    }
+
+    public String getEmploymentType() {
+<span class="nc" id="L34">        return employmentType;</span>
+    }
+
+    public int getAge() {
+<span class="nc" id="L38">        return age;</span>
+    }
+
+    private String employmentType;
+    private int age;
+
+<span class="fc" id="L44">    public Employee(String title, String name, String PPS, String number, String employmentType, int age) {</span>
+
+<span class="pc bpc" id="L46" title="2 of 6 branches missed.">        if (title.equals(&quot;Mr&quot;) || title.equals(&quot;Mrs&quot;)  || title.equals(&quot;Miss&quot;)) {</span>
+<span class="fc" id="L47">            this.title = title;</span>
+        }
+        else
+<span class="fc" id="L50">            throw  new IllegalArgumentException(&quot;Title must be MR,Mrs ir Miss&quot;);</span>
+
+<span class="pc bpc" id="L52" title="1 of 6 branches missed.">        if(name.length() &gt;= 5 &amp; name.length()&lt;=22){</span>
+<span class="fc" id="L53">            this.name = name;</span>
+        }
+        else
+<span class="fc" id="L56">            throw  new IllegalArgumentException(&quot;Please enter Valid name or name Size&quot;);</span>
+
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if(PPS.length() == 6){</span>
+<span class="fc" id="L59">            this.PPS = PPS;</span>
+        }
+        else
+<span class="fc" id="L62">            throw  new IllegalArgumentException(&quot;Please enter Valid PPS number&quot;);</span>
+
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if(number.length() == 7){</span>
+<span class="fc" id="L65">            this.number = number;</span>
+        }
+        else
+<span class="fc" id="L68">            throw new IllegalArgumentException(&quot;Please enter Valid phone number&quot;);</span>
+
+<span class="pc bpc" id="L70" title="1 of 4 branches missed.">        if(employmentType == &quot;Full-time&quot; || employmentType == &quot;Part-time&quot;){</span>
+<span class="fc" id="L71">            this.employmentType = employmentType;</span>
+        }
+
+        else
+<span class="fc" id="L75">            throw new IllegalArgumentException(&quot;Please enter Valid employment title&quot;);</span>
+
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">        if(age &lt;= 18){</span>
+<span class="nc" id="L78">            throw new IllegalArgumentException(&quot;Under age, Too young to work here. must be 18 or over&quot;);</span>
+        }
+        else
+<span class="fc" id="L81">            this.age = age;</span>
+<span class="fc" id="L82">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
